@@ -277,6 +277,8 @@
   #formObra .chk input{width:20px;height:20px;margin:0;flex:0 0 auto}
   #listaEstante .quien{display:block;font-size:12px;color:#9be37f;opacity:.9}
   #listaEstante .acc{display:flex;flex-direction:column;gap:6px}
+  #formObra input,#formObra select,#formObra textarea{width:100%;box-sizing:border-box;min-width:0}
+  #formObra .chk input{width:20px}
 </style>
 <script type="importmap">
 {
@@ -352,6 +354,7 @@
   <h2 id="dlgEstanteTit">Mi estantería</h2>
   <p>Cargá la tapa de cada libro, vinilo, CD o casete con sus datos. Al enfocarla con la cámara, el Verbólogo aparece encima y te la cuenta.</p>
   <p id="estadoComp" class="comp" role="status" aria-live="polite">Conectando con la estantería compartida…</p>
+  <div class="fila"><button id="btnCopiarEstante" type="button">Copiar enlace para otro dispositivo</button><button id="btnCodigoEstante" type="button">Usar un código de estante</button></div>
   <form id="formObra" autocomplete="off">
     <div class="fotoObra"><img id="obraPrevia" alt="" hidden><div class="fuentes"><label class="archivo">📷 Sacar foto<input type="file" id="obraFoto" accept="image/*" capture="environment"></label><label class="archivo">🖼️ Elegir de la galería<input type="file" id="obraGaleria" accept="image/*"></label></div></div>
     <label>Título<input id="obraTit" required maxlength="140"></label>
@@ -362,7 +365,7 @@
     </div>
     <label>Notas para el Verbólogo (opcional)<textarea id="obraNotas" rows="2" maxlength="400" placeholder="Edición, de quién es, por qué es especial…"></textarea></label>
     <label>Tu nombre (opcional, se muestra en la tapa compartida)<input id="obraQuien" maxlength="40" autocomplete="given-name"></label>
-    <label class="chk"><input type="checkbox" id="obraCompartir" checked> Compartirla con todos (estantería colaborativa: se ve en cualquier celular o tablet)</label>
+    <label class="chk"><input type="checkbox" id="obraCompartir" checked> Compartirla en el estante en vivo (se ve en todos los dispositivos que abran el mismo enlace)</label>
     <div class="acciones"><button id="obraAgregar" type="submit">Agregar a la estantería</button></div>
   </form>
   <p id="estadoEstante" role="status" aria-live="polite"></p>
@@ -2989,7 +2992,7 @@ estUI.cardGuardar.addEventListener('click', () => {
 
 /* ---------- La estantería: agregar, listar, borrar, compartir ---------- */
 function abrirEstante(){
-  pintarLista();
+  pintarLista(); if (Date.now() - COMP.ultima > 5000) sincronizar().catch(() => {});
   if (estUI.dlg.showModal) { if (!estUI.dlg.open) estUI.dlg.showModal(); } else estUI.dlg.setAttribute('open', '');
 }
 async function pintarLista(){
@@ -3007,13 +3010,13 @@ async function pintarLista(){
     const b = document.createElement('b'); b.textContent = o.titulo;
     const sp = document.createElement('span'); sp.textContent = [TIPOS_CORTO[o.tipo], o.autor, o.anio].filter(Boolean).join(' · ');
     const qn = document.createElement('small'); qn.className = 'quien';
-    qn.textContent = o.compartida ? `Compartida${o.quien ? ` por ${o.quien}` : ''}${o.uid && o.uid === COMP.uid ? ' (vos)' : ''}` : 'Solo en este dispositivo';
+    qn.textContent = o.origen === 'fija' ? 'Estantería fija de DIA' : o.compartida ? `Compartida${o.quien ? ` por ${o.quien}` : ''}${o.uid && o.uid === COMP.uid ? ' (vos)' : ''}` : 'Solo en este dispositivo';
     d.append(b, sp, qn);
-    const mia = !o.compartida || (o.uid && o.uid === COMP.uid);
+    const mia = !o.compartida || (o.origen === 'vivo' && o.uid && o.uid === COMP.uid);
     const x = document.createElement('button'); x.type = 'button'; x.textContent = mia ? 'Quitar' : 'Ocultar'; x.setAttribute('aria-label', `${mia ? 'Quitar' : 'Ocultar'} ${o.titulo}`);
     x.title = mia ? 'Quitarla de la estantería' : 'La subió otra persona: se oculta solo en este dispositivo';
     x.addEventListener('click', async () => {
-      if (o.compartida && mia){ try { await quitarCompartida(o.id); } catch (e) { estUI.estado.textContent = `No pude quitarla de la estantería compartida (${e?.code || e?.message || e}).`; return; } }
+      if (o.origen === 'vivo' && mia){ try { await quitarCompartida(o.id); } catch (e) { estUI.estado.textContent = `No pude quitarla de la estantería compartida (${e?.code || e?.message || e}).`; return; } }
       if (o.compartida && !mia) ocultas.add(o.id), guardarOcultas();
       await borrarObra(o.id); pintarLista(); avisarCambioRA();
     });
@@ -3102,70 +3105,145 @@ estUI.importar.addEventListener('change', async () => {
     pintarLista(); recargarRA();
   } catch { estUI.estado.textContent = 'No pude leer ese archivo de estantería.'; }
 });
-/* ---------- Estantería compartida (Firebase Realtime Database, autenticación anónima) ----------
-   Cada obra se guarda en verbologo/obras/{id} con su tapa achicada (sin el .mind: cada
-   dispositivo lo prepara la primera vez y lo guarda). Cualquiera puede leer; cada quien
-   solo puede borrar o cambiar las que subió. Ver el README para las reglas. */
-const FB_CONFIG = {
-  apiKey: "AIzaSyDIZxDgF_1IYOy0luKJNIIcD1Ma6ymTZvY",
-  authDomain: "la-boveda-f86fe.firebaseapp.com",
-  databaseURL: "https://la-boveda-f86fe-default-rtdb.firebaseio.com",
-  projectId: "la-boveda-f86fe",
-  storageBucket: "la-boveda-f86fe.firebasestorage.app",
-  messagingSenderId: "460598362239",
-  appId: "1:460598362239:web:10c998f3ef5e399e7fff4a"
-};
-const FB_RUTA = 'verbologo/obras';
-const FB_SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
-const COMP = { db:null, uid:null, listo:null };
+/* ---------- Estantería compartida, sin cuentas ----------
+   1) FIJA: estanteria.json, en la misma carpeta de la página (la sube el docente a GitHub).
+      Anda siempre y en todos los dispositivos; nadie la puede borrar desde la página.
+   2) EN VIVO: un «estante» en jsonblob.com (servicio gratuito, sin cuenta). Un índice con los
+      datos de cada obra y un blob aparte por cada tapa. Se comparte con un enlace (?estante=CÓDIGO)
+      o escribiendo el código. Cualquiera con el enlace puede sumar tapas; cada dispositivo
+      puede quitar solo las que subió. Se actualiza solo cada 30 segundos. */
+const ESTANTE_FIJO_URL = 'estanteria.json';
+const ESTANTE_DEFECTO = '';           // código del estante en vivo que se abre sin enlace (lo fija el docente)
+const JB = 'https://jsonblob.com/api/jsonBlob';
+const COMP = { uid:'', id:'', sincronizando:false, ultima:0, error:'' };
+const leerLS = (k, d = '') => { try { return localStorage.getItem(`${CLAVE_RA}-${k}`) ?? d; } catch { return d; } };
+const ponerLS = (k, v) => { try { localStorage.setItem(`${CLAVE_RA}-${k}`, v); } catch {} };
+COMP.uid = leerLS('uid') || (() => { const u = 'u' + Math.random().toString(36).slice(2, 12) + Date.now().toString(36); ponerLS('uid', u); return u; })();
+const codigoValido = (c) => /^[A-Za-z0-9-]{8,80}$/.test(String(c || ''));
+{ const q = new URLSearchParams(location.search).get('estante'); COMP.id = codigoValido(q) ? q : (leerLS('estante') || ESTANTE_DEFECTO); if (codigoValido(q)) ponerLS('estante', q); }
 let ocultas = new Set();
-try { ocultas = new Set(JSON.parse(localStorage.getItem(`${CLAVE_RA}-ocultas`) || '[]')); } catch {}
-function guardarOcultas(){ try { localStorage.setItem(`${CLAVE_RA}-ocultas`, JSON.stringify([...ocultas])); } catch {} }
-function estadoComp(txt, error){ estUI.estadoComp.textContent = txt; estUI.estadoComp.classList.toggle('error', !!error); }
-const motivoFB = (e) => /PERMISSION_DENIED|permission/i.test(String(e?.code || e?.message || e))
-  ? 'falta habilitar la estantería compartida en Firebase: mirá el README'
-  : (e?.message || String(e));
-function cargarScript(src){
-  return new Promise((ok, mal) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => mal(new Error('sin conexión')); document.head.append(s); });
+try { ocultas = new Set(JSON.parse(leerLS('ocultas', '[]'))); } catch {}
+function guardarOcultas(){ ponerLS('ocultas', JSON.stringify([...ocultas])); }
+function estadoComp(t, error){ estUI.estadoComp.textContent = t; estUI.estadoComp.classList.toggle('error', !!error); }
+const motivoFB = (e) => (e?.message || String(e));
+const enlaceEstante = () => { const u = new URL(location.href); u.search = ''; u.hash = ''; if (COMP.id) u.searchParams.set('estante', COMP.id); return u.toString(); };
+
+async function jb(metodo, id, cuerpo){
+  const r = await fetch(id ? `${JB}/${encodeURIComponent(id)}` : JB, { method:metodo, cache:'no-store',
+    headers:cuerpo === undefined ? { 'Accept':'application/json' } : { 'Content-Type':'application/json', 'Accept':'application/json' },
+    body:cuerpo === undefined ? undefined : JSON.stringify(cuerpo) });
+  if (!r.ok) throw new Error(r.status === 404 ? 'ese estante no existe' : `el servicio respondió ${r.status}`);
+  return r;
 }
-function conectarCompartida(){
-  return COMP.listo ||= (async () => {
-    if (!window.firebase?.database){
-      await cargarScript(FB_SDK + 'firebase-app-compat.js');
-      await Promise.all([cargarScript(FB_SDK + 'firebase-auth-compat.js'), cargarScript(FB_SDK + 'firebase-database-compat.js')]);
-    }
-    const app = firebase.apps.find(a => a.name === 'estanteria') || firebase.initializeApp(FB_CONFIG, 'estanteria');
-    const cred = await app.auth().signInAnonymously();
-    COMP.uid = cred.user.uid; COMP.db = app.database();
-    COMP.db.ref(FB_RUTA).on('value', snap => sincronizar(snap.val() || {}).catch(e => console.warn(e)),
-      e => estadoComp(`No pude leer la estantería compartida (${motivoFB(e)}). Tus tapas quedan en este dispositivo.`, true));
-    return COMP;
-  })().catch(e => { COMP.listo = null; estadoComp(`Sin estantería compartida por ahora (${motivoFB(e)}). Tus tapas quedan en este dispositivo.`, true); throw e; });
+async function crearBlob(datos){
+  const r = await jb('POST', null, datos);
+  const loc = r.headers.get('Location') || r.headers.get('X-jsonblob') || r.headers.get('X-Jsonblob-Id') || '';
+  const id = loc.split('/').filter(Boolean).pop();
+  if (!codigoValido(id)) throw new Error('el servicio no devolvió el código del estante');
+  return id;
 }
+const limpiarObraRemota = (id, r) => ({ id, creada:+r.creada || Date.now(), titulo:txt(r.titulo, 140), autor:txt(r.autor, 140), tipo:TIPOS[r.tipo] ? r.tipo : 'otro',
+  anio:txt(r.anio, 12), notas:txt(r.notas, 400), uid:txt(r.uid, 64), quien:txt(r.quien, 40) });
 const txt = (v, n) => String(v ?? '').slice(0, n);
-async function sincronizar(remotas){
-  const locales = await listarObras(), porId = new Map(locales.map(o => [o.id, o]));
-  let cambios = 0, n = 0;
-  for (const [id, r] of Object.entries(remotas)){
-    if (!r || !r.titulo || !String(r.img || '').startsWith('data:image/') || ocultas.has(id)) continue;
-    n++;
-    const l = porId.get(id);
-    const o = { id, creada:+r.creada || Date.now(), titulo:txt(r.titulo, 140), autor:txt(r.autor, 140), tipo:TIPOS[r.tipo] ? r.tipo : 'otro',
-      anio:txt(r.anio, 12), notas:txt(r.notas, 400), img:r.img, uid:txt(r.uid, 128), quien:txt(r.quien, 40), compartida:true,
-      mind: l && l.img === r.img ? l.mind : null };
-    if (!l || !l.compartida || l.img !== o.img || ['titulo', 'autor', 'tipo', 'anio', 'notas', 'quien'].some(k => l[k] !== o[k])){ await guardarObra(o); cambios++; }
-  }
-  for (const l of locales) if (l.compartida && !(l.id in remotas)){ await borrarObra(l.id); cambios++; }
-  estadoComp(`Estantería compartida conectada: ${n} ${n === 1 ? 'tapa' : 'tapas'} de todos. Lo que subas se ve en cualquier celular o tablet.`);
-  if (cambios){ if (estUI.dlg.open) pintarLista(); avisarCambioRA(); }
+
+async function leerFija(){
+  try {
+    const r = await fetch(ESTANTE_FIJO_URL, { cache:'no-cache' });
+    if (!r.ok) return [];
+    const j = await r.json(), lista = Array.isArray(j?.obras) ? j.obras : Object.entries(j?.obras || {}).map(([id, o]) => ({ id, ...o }));
+    return lista.filter(o => o?.titulo && String(o.img || '').startsWith('data:image/')).map((o, i) =>
+      ({ ...limpiarObraRemota(`fija-${txt(o.id || i, 60)}`, o), img:o.img, mind:typeof o.mind === 'string' ? o.mind : null, origen:'fija', compartida:true }));
+  } catch { return []; }
+}
+async function leerVivo(){
+  if (!COMP.id) return null;
+  const idx = await (await jb('GET', COMP.id)).json();
+  return idx && typeof idx.obras === 'object' ? idx : { obras:{} };
+}
+async function sincronizar(){
+  if (COMP.sincronizando) return; COMP.sincronizando = true;
+  try {
+    const locales = await listarObras(), porId = new Map(locales.map(o => [o.id, o]));
+    let cambios = 0;
+    const guardarSiCambio = async (o) => {
+      const l = porId.get(o.id);
+      if (l && l.img === o.img && ['titulo', 'autor', 'tipo', 'anio', 'notas', 'quien', 'origen'].every(k => (l[k] || '') === (o[k] || ''))) return;
+      o.mind = o.mind || (l && l.img === o.img ? l.mind : null);
+      await guardarObra(o); cambios++;
+    };
+    // estantería fija
+    const fijas = await leerFija(), idsFijas = new Set(fijas.map(o => o.id));
+    for (const o of fijas) if (!ocultas.has(o.id)) await guardarSiCambio(o);
+    // estantería en vivo
+    let idsVivo = null, nVivo = 0;
+    try {
+      const idx = await leerVivo();
+      if (idx){
+        idsVivo = new Set();
+        for (const [id, r] of Object.entries(idx.obras)){
+          if (!r?.titulo || !codigoValido(r.imgId)) continue;
+          idsVivo.add(id); nVivo++;
+          if (ocultas.has(id)) continue;
+          const l = porId.get(id);
+          let img = l && l.imgId === r.imgId ? l.img : null;
+          if (!img){ const b = await (await jb('GET', r.imgId)).json(); img = String(b?.img || ''); if (!img.startsWith('data:image/')) continue; }
+          await guardarSiCambio({ ...limpiarObraRemota(id, r), img, imgId:r.imgId, origen:'vivo', compartida:true });
+        }
+      }
+      COMP.error = '';
+    } catch (e) { COMP.error = motivoFB(e); }
+    for (const l of locales){
+      if (l.origen === 'fija' && !idsFijas.has(l.id)){ await borrarObra(l.id); cambios++; }
+      if (l.origen === 'vivo' && idsVivo && !idsVivo.has(l.id)){ await borrarObra(l.id); cambios++; }
+    }
+    COMP.ultima = Date.now();
+    const partes = [];
+    if (fijas.length) partes.push(`${fijas.length} en la estantería fija`);
+    if (COMP.id) partes.push(COMP.error ? `estante en vivo sin conexión (${COMP.error})` : `${nVivo} en el estante en vivo «${COMP.id.slice(0, 8)}…»`);
+    else partes.push('todavía no hay estante en vivo: se crea solo al compartir la primera tapa');
+    estadoComp(`Estantería compartida: ${partes.join(' · ')}.`, !!COMP.error);
+    if (cambios){ if (estUI.dlg.open) pintarLista(); avisarCambioRA(); }
+  } finally { COMP.sincronizando = false; }
 }
 async function subirCompartida(o){
-  await conectarCompartida();
-  await COMP.db.ref(`${FB_RUTA}/${o.id}`).set({ titulo:o.titulo, autor:o.autor || '', tipo:o.tipo, anio:o.anio || '', notas:o.notas || '',
-    img:o.img, quien:o.quien || '', uid:COMP.uid, creada:firebase.database.ServerValue.TIMESTAMP });
+  if (o.img.length > 280000) o.img = await achicar(o.img, 720);
+  const imgId = await crearBlob({ img:o.img });
+  if (!COMP.id){
+    COMP.id = await crearBlob({ tipo:'estanteria-verbologo', version:1, obras:{} });
+    ponerLS('estante', COMP.id);
+    try { history.replaceState(null, '', enlaceEstante()); } catch {}
+  }
+  const idx = await leerVivo();
+  idx.obras[o.id] = { titulo:o.titulo, autor:o.autor || '', tipo:o.tipo, anio:o.anio || '', notas:o.notas || '', quien:o.quien || '', uid:COMP.uid, creada:Date.now(), imgId };
+  await jb('PUT', COMP.id, idx);
+  await guardarObra({ ...o, imgId, origen:'vivo', compartida:true, uid:COMP.uid });
+  sincronizar().catch(() => {});
 }
-async function quitarCompartida(id){ await conectarCompartida(); await COMP.db.ref(`${FB_RUTA}/${id}`).remove(); }
-conectarCompartida().catch(() => {});
+async function quitarCompartida(id){
+  const idx = await leerVivo(); if (!idx) return;
+  const r = idx.obras[id]; delete idx.obras[id];
+  await jb('PUT', COMP.id, idx);
+  if (r?.imgId) jb('DELETE', r.imgId).catch(() => {});
+}
+// botones para pasar el estante a otro dispositivo
+$('btnCopiarEstante').addEventListener('click', async () => {
+  if (!COMP.id){ estUI.estado.textContent = 'Todavía no hay estante en vivo: compartí una tapa y se crea solo.'; return; }
+  const enlace = enlaceEstante();
+  try { await navigator.clipboard.writeText(enlace); estUI.estado.textContent = `Enlace copiado. Abrilo en la tablet o pasáselo a tus estudiantes: ${enlace}`; }
+  catch { estUI.estado.textContent = `Abrí este enlace en el otro dispositivo: ${enlace}`; }
+});
+$('btnCodigoEstante').addEventListener('click', () => {
+  const c = (prompt('Escribí o pegá el código (o el enlace) del estante en vivo:', COMP.id) || '').trim();
+  const cod = c.includes('estante=') ? new URL(c, location.href).searchParams.get('estante') : c;
+  if (!c) return;
+  if (!codigoValido(cod)){ estUI.estado.textContent = 'Ese código no parece válido.'; return; }
+  COMP.id = cod; ponerLS('estante', cod);
+  try { history.replaceState(null, '', enlaceEstante()); } catch {}
+  estUI.estado.textContent = 'Listo: ahora ves ese estante.'; sincronizar().catch(() => {});
+});
+sincronizar().catch(() => {});
+setInterval(() => { if (document.visibilityState === 'visible') sincronizar().catch(() => {}); }, 30000);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && Date.now() - COMP.ultima > 10000) sincronizar().catch(() => {}); });
 
 /* ---------- Ver mejor: interfaz bien visible sobre la cámara ---------- */
 const btnVer = $('btnVerRA');

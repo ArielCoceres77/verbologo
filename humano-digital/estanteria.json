@@ -1,0 +1,4 @@
+{
+  "nota": "Estantería fija de El Verbólogo. Cada obra: id, titulo, autor, tipo (libro, vinilo, cd, casete, fanzine, otro), anio, notas, quien e img (data URL JPG). También sirve un archivo exportado desde «Mi estantería».",
+  "obras": []
+}
