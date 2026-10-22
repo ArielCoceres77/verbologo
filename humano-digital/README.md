@@ -12,7 +12,9 @@ Es experto en **palabras** (verbos, verboides, voseo, neologismos, préstamos, s
 ## Cómo se usa
 1. **Llamar al Verbólogo** (el botón con su cara): se abre la cámara y aparece de pie en la imagen. Tocá «Hablar» y conversá, o escribile.
 2. **Leer la tapa**: con la cámara abierta, enfocá cualquier libro, vinilo, CD o casete y tocá «Leer la tapa». La página lee el texto de la tapa y el Verbólogo identifica la obra y te la cuenta. «Guardar en la estantería» la deja cargada.
-3. **Mi estantería**: sacale una foto de frente a cada tapa y cargá sus datos. Desde ahí, al enfocarla, el Verbólogo salta y se para **sobre la tapa** y te la cuenta solo. Hasta 24 tapas; se pueden exportar e importar para compartir con estudiantes.
+3. **Mi estantería (colaborativa)**: sacale una foto a la tapa o **elegila de la galería** del celular, y cargá sus datos. Con «Compartirla con todos» marcado, la tapa sube a la **estantería compartida** y aparece en cualquier celular o tablet que abra la página. Al enfocarla, el Verbólogo salta, se para **sobre la tapa** y te la cuenta solo. Cada persona puede quitar solo las tapas que subió ella; las de otros se pueden ocultar en el propio dispositivo.
+4. **Moverlo**: con la cámara abierta, arrastralo con el dedo adonde quieras y cambiale el tamaño con dos dedos (o con − y +). El botón con su cara lo vuelve a llamar.
+5. **Ver mejor**: en la barra de la cámara, ese botón pone fondos oscuros sólidos y letras grandes para que la interfaz se lea bien sobre cualquier imagen. Queda recordado.
 
 ## Publicarla
 1. Creá un repositorio en GitHub y subí el contenido de esta carpeta.
@@ -21,10 +23,32 @@ Es experto en **palabras** (verbos, verboides, voseo, neologismos, préstamos, s
 
 La cámara y el micrófono **solo funcionan con https** (GitHub Pages o Netlify).
 
+## Habilitar la estantería compartida (una sola vez)
+Usa la misma base de Firebase de La Bóveda (`la-boveda-f86fe`, autenticación anónima ya activa). Hay que sumarle permiso para la carpeta `verbologo`:
+
+1. Entrá a la [consola de Firebase](https://console.firebase.google.com/) → proyecto **la-boveda-f86fe** → **Realtime Database** → pestaña **Reglas**.
+2. Dentro de `"rules": { … }`, al lado de `"rooms"`, agregá este bloque (con una coma antes o después según corresponda) y tocá **Publicar**:
+
+```json
+"verbologo": {
+  "obras": {
+    ".read": true,
+    "$id": {
+      ".write": "auth != null && (!data.exists() || data.child('uid').val() === auth.uid)",
+      ".validate": "!newData.exists() || (newData.hasChildren(['titulo', 'img', 'uid', 'creada']) && newData.child('uid').val() === auth.uid && newData.child('titulo').isString() && newData.child('titulo').val().length <= 140 && newData.child('img').isString() && newData.child('img').val().beginsWith('data:image/') && newData.child('img').val().length < 300000)"
+    }
+  }
+}
+```
+
+Mientras no esté, la página avisa «falta habilitar la estantería compartida» y las tapas quedan solo en el dispositivo donde se cargaron. Desde la consola podés borrar cualquier tapa que no corresponda (moderación).
+
 ## Lo que conviene saber
 - Necesita internet: la voz es el agente de ElevenLabs (cada charla consume créditos) y «Leer la tapa» descarga el lector de texto la primera vez.
 - Sin tapas cargadas, el Verbólogo aparece flotando delante de la cámara (no queda pegado a un objeto). Sobre una tapa de la estantería sí queda parado encima y la sigue.
 - Las tapas con mucho detalle y buena luz se reconocen mejor; los estuches de CD brillan: inclinalos un poco.
+- Cada dispositivo prepara las tapas compartidas la primera vez que abre la cámara (unos segundos por tapa); después quedan guardadas.
+- Las tapas compartidas son públicas: no subas fotos de personas, especialmente de estudiantes.
 
 ## Archivos
 | Archivo | Para qué |
