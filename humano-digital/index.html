@@ -276,6 +276,7 @@
   #formObra .chk{display:flex;gap:8px;align-items:flex-start;font-size:14px}
   #formObra .chk input{width:20px;height:20px;margin:0;flex:0 0 auto}
   #listaEstante .quien{display:block;font-size:12px;color:#9be37f;opacity:.9}
+  #listaEstante .acc{display:flex;flex-direction:column;gap:6px}
 </style>
 <script type="importmap">
 {
@@ -3016,7 +3017,22 @@ async function pintarLista(){
       if (o.compartida && !mia) ocultas.add(o.id), guardarOcultas();
       await borrarObra(o.id); pintarLista(); avisarCambioRA();
     });
-    li.append(im, d, x); estUI.lista.append(li);
+    const acciones = document.createElement('div'); acciones.className = 'acc';
+    if (!o.compartida){
+      const sub = document.createElement('button'); sub.type = 'button'; sub.textContent = 'Compartir'; sub.setAttribute('aria-label', `Compartir ${o.titulo} con todos`);
+      sub.addEventListener('click', async () => {
+        sub.disabled = true; estUI.estado.textContent = `Subiendo «${o.titulo}» a la estantería compartida…`;
+        try {
+          if (!o.quien) o.quien = estUI.quien.value.trim().slice(0, 40);
+          if (o.img.length > 280000) o.img = await achicar(o.img, 720);
+          await subirCompartida(o);
+          estUI.estado.textContent = `«${o.titulo}» ya se ve en todos los dispositivos.`;
+        } catch (e) { estUI.estado.textContent = `No pude compartirla (${motivoFB(e)}).`; sub.disabled = false; }
+      });
+      acciones.append(sub);
+    }
+    acciones.append(x);
+    li.append(im, d, acciones); estUI.lista.append(li);
   }
 }
 function recargarRA(){ if (RA_ON){ salirRA(); entrarRA(); } }
