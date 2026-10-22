@@ -1,0 +1,201 @@
+BASE DE CONOCIMIENTO DE ANAQUEL, EL LIBRERO PUNK DEL LITORAL
+Humano digital de DIA (Didáctica con IA) y Adustiones Libertarias, El Colorado, Formosa.
+Uso: guía para un agente de voz que conversa sobre libros, discos (vinilos, CD, casetes) y obras de arte que el usuario enfoca con la cámara. Los datos marcados [verificar] son dudosos o incompletos: el agente debe decirlo y no inventar.
+
+====================================================================
+1. CÓMO TRABAJA ANAQUEL CON LA CÁMARA
+====================================================================
+- La página le avisa qué obra está enfocando el usuario con mensajes del tipo «Estoy enfocando con la cámara un libro: "Título", de Autor». Cuando llega ese aviso, Anaquel habla de ESA obra: qué es, quién la hizo, cuándo, por qué importa, una curiosidad y una puerta de entrada (por dónde empezar a leerla o escucharla). Cierra con una pregunta que invite a seguir.
+- Si el aviso dice «la cámara leyó este texto en la tapa», el texto puede venir con errores de lectura. Anaquel intenta identificar la obra (título, autor, banda) con lo que se lee; si duda entre dos, lo dice y pregunta.
+- Si la obra no está en esta base ni la conoce bien (por ejemplo, una edición local o autogestionada), lo admite con honestidad y pide al usuario que le cuente: quién la hizo, de dónde es, qué la hace especial. Nunca inventa argumentos, fechas, editoriales ni canciones.
+- Para obras de autores vivos de la región, habla de lo que sabe con prudencia y celebra la edición independiente.
+
+====================================================================
+2. UMBERTO ECO (Alessandria, Italia, 1932 – Milán, 2016)
+====================================================================
+Semiólogo, filósofo, medievalista, novelista y profesor en la Universidad de Bolonia. Pensó la cultura de masas, los signos y el lector como cooperador del texto.
+Novelas:
+- El nombre de la rosa (1980): novela policial en una abadía benedictina del norte de Italia en 1327. Fray Guillermo de Baskerville (eco de Guillermo de Ockham y de Sherlock Holmes) y su novicio Adso de Melk investigan muertes ligadas a la biblioteca-laberinto y a un libro perdido: el segundo libro de la Poética de Aristóteles, dedicado a la comedia y la risa. El bibliotecario ciego Jorge de Burgos es un homenaje a Borges. Película de Jean-Jacques Annaud (1986) con Sean Connery.
+- El péndulo de Foucault (1988): tres editores inventan por juego un «Plan» que mezcla templarios, rosacruces y conspiraciones; la ficción termina devorándolos. Sátira de las teorías conspirativas.
+- La isla del día de antes (1994): náufrago del siglo XVII frente al meridiano de cambio de fecha.
+- Baudolino (2000): un campesino piamontés mentiroso del siglo XII, ahijado de Federico Barbarroja, busca el reino del Preste Juan.
+- La misteriosa llama de la reina Loana (2004): un librero anticuario pierde la memoria y la reconstruye con historietas, discos y revistas de su infancia en la Italia fascista. Novela ilustrada.
+- El cementerio de Praga (2010): falsificador que fabrica documentos antisemitas que desembocan en los Protocolos de los sabios de Sion.
+- Número cero (2015): un diario que nunca saldrá; sobre la manipulación periodística.
+Ensayos clave: Obra abierta (1962), Apocalípticos e integrados (1964, sobre cultura de masas), La estructura ausente (1968), Tratado de semiótica general (1975), Cómo se hace una tesis (1977), Lector in fabula (1979, el lector modelo), Seis paseos por los bosques narrativos (1994), Kant y el ornitorrinco (1997), Sobre literatura (2002), Decir casi lo mismo (2003, sobre traducción), Historia de la belleza (2004), Historia de la fealdad (2007), Vértigo de las listas (2009), Construir al enemigo (2011). Su conferencia «El fascismo eterno» (1995) enumera rasgos del «Ur-fascismo» (culto a la tradición, rechazo del pensamiento crítico, miedo a la diferencia, etc.); se publicó en Cinco escritos morales (1997).
+Ideas útiles para charlar: semiosis ilimitada, lector modelo, obra abierta, «los libros hablan de otros libros», los límites de la interpretación (frente a la sobreinterpretación).
+
+====================================================================
+3. LITERATURA ANARQUISTA Y PENSAMIENTO LIBERTARIO
+====================================================================
+Clásicos:
+- Pierre-Joseph Proudhon: ¿Qué es la propiedad? (1840), con la frase «la propiedad es un robo». Primero en llamarse anarquista.
+- Mijaíl Bakunin: Dios y el Estado (escrito en 1871, publicado póstumo en 1882); Estatismo y anarquía (1873). Choque con Marx en la Primera Internacional (1872).
+- Piotr Kropotkin (1842–1921), príncipe ruso, geógrafo y anarco-comunista: Palabras de un rebelde (1885), La moral anarquista (1889), La conquista del pan (1892), Campos, fábricas y talleres (1899), Memorias de un revolucionario (1899), El apoyo mutuo (1902, la cooperación como factor de la evolución, respuesta al darwinismo social), La Gran Revolución (1909). Murió en Dmitrov; su entierro fue la última gran manifestación anarquista en la Rusia soviética.
+- Errico Malatesta: La anarquía (1891), Entre campesinos (1884). Organizador incansable; estuvo en Buenos Aires entre 1885 y 1889.
+- Emma Goldman (Kaunas, 1869 – Toronto, 1940): oradora y escritora anarquista, defensora del amor libre, el control de la natalidad y la libertad de expresión. Editó la revista Mother Earth (1906–1917). Libros: Anarquismo y otros ensayos (1910), Mi desilusión en Rusia (1923, crítica temprana a los bolcheviques tras Kronstadt), Viviendo mi vida (1931, autobiografía). Fue deportada de Estados Unidos en 1919 junto a Alexander Berkman. Apoyó la revolución española de 1936. Frase que se le atribuye con frecuencia: «Si no puedo bailar, no es mi revolución» [atribuida: es una paráfrasis popular de un pasaje de Viviendo mi vida, no una cita textual].
+- Alexander Berkman: Memorias de un anarquista en prisión (1912), El ABC del comunismo libertario (1929).
+- Piotr Arshinov (Archinov, 1887–1937): obrero metalúrgico, anarquista ucraniano-ruso, compañero de Néstor Makhno. Escribió Historia del movimiento makhnovista (1918–1921), publicada en 1923, testimonio directo del ejército insurreccional campesino de Ucrania. Fue uno de los autores de la Plataforma organizativa de los comunistas libertarios (1926, grupo Dielo Truda, París, con Makhno, Ida Mett y otros), que dio origen al «plataformismo». Volin le respondió con críticas; Volin escribió La revolución desconocida (1947). Arshinov volvió a la URSS en los años treinta y murió en las purgas estalinistas (1937).
+- Néstor Makhno: memorias de la revolución en Ucrania.
+- Rudolf Rocker: Anarcosindicalismo (1938), Nacionalismo y cultura (1937).
+- Ricardo Flores Magón: periódico Regeneración, revolución mexicana.
+- Rafael Barrett (1876–1910): español que vivió en Paraguay, anarquista, maestro de la crónica breve; El dolor paraguayo (1911), Lo que son los yerbales (1910). Muy cercano a nuestra región: Roa Bastos lo consideró padre de la prosa paraguaya moderna.
+- Louise Michel, Voltairine de Cleyre, Ursula K. Le Guin (Los desposeídos, 1974, utopía ambigua anarquista), Murray Bookchin (ecología social), Colin Ward (Anarquía en acción, 1973), David Graeber (En deuda, 2011).
+Historiadores y ensayistas contemporáneos:
+- Frank Mintz (Montpellier, 1941): historiador del anarquismo y sindicalista (CNT francesa). Obras: La autogestión en la España revolucionaria (francés 1970; castellano, La Piqueta, 1977), Los Amigos de Durruti, los trotskistas y los sucesos de mayo (1978, con Miguel Peciña), Explosiones de libertad: España 36 – Hungría 56 (1986), Autogestión y anarcosindicalismo en la España revolucionaria (1999), Historia de la movida anarquista 1789–2012 (2013). Especialista en las colectividades de 1936 y en el anarquismo latinoamericano.
+- Christian Ferrer (Buenos Aires, 1960): sociólogo y ensayista argentino, profesor en la UBA. Obras: El lenguaje libertario (compilador; antología del pensamiento anarquista contemporáneo, 1990), Mal de ojo. El drama de la mirada (1996), Cabezas de tormenta. Ensayos sobre lo ingobernable (2004, sobre anarquistas, la técnica y la memoria libertaria), Barón Biza. El inmoralista (2007), La amargura metódica. Vida y obra de Ezequiel Martínez Estrada (2014). Piensa críticamente la técnica, el dolor y la cultura moderna. [verificar años exactos si el usuario insiste]
+- Ángel Cappelletti (argentino, 1927–1995): La ideología anarquista; Hechos y figuras del anarquismo hispanoamericano.
+- Osvaldo Bayer (1927–2018): Los anarquistas expropiadores (1975), Severino Di Giovanni, el idealista de la violencia (1970), Los vengadores de la Patagonia trágica (1972–1978; reeditada como La Patagonia rebelde; película de Héctor Olivera, 1974).
+Anarquismo en Argentina: diario La Protesta (desde 1897), periódico La Voz de la Mujer (1896–1897, «Ni dios, ni patrón, ni marido»), FORA (1901; el «comunismo anárquico» desde el V Congreso, 1905), Semana Trágica (1919), huelgas patagónicas (1920–1922), Simón Radowitzky, Juana Rouco Buela, Kurt Wilckens, el teatro de Rodolfo González Pacheco y la poesía de Alberto Ghiraldo. Néstor Perlongher (1949–1992), poeta neobarroso («Cadáveres», 1984) con una mirada anarco-queer. Eduardo Colombo, psicoanalista y anarquista.
+Ficción con espíritu libertario: Muerte accidental de un anarquista (Dario Fo, 1970), La Patagonia rebelde, El Eternauta (Oesterheld y Solano López, 1957, héroe colectivo), Rebelión en la granja (Orwell, 1945; también Homenaje a Cataluña, 1938, sobre su experiencia en la guerra civil española).
+
+====================================================================
+4. LITERATURA LATINOAMERICANA (selección para conversar)
+====================================================================
+- Modernismo: Rubén Darío, Azul (1888), Prosas profanas (1896). José Martí, Versos sencillos (1891).
+- Vanguardias: César Vallejo, Trilce (1922), Los heraldos negros (1919). Vicente Huidobro, Altazor (1931). Oliverio Girondo, Veinte poemas para ser leídos en el tranvía (1922).
+- Poetas mayores: Gabriela Mistral (Nobel 1945), Pablo Neruda (Veinte poemas de amor, 1924; Canto general, 1950; Nobel 1971), Octavio Paz (El laberinto de la soledad, 1950; Nobel 1990), Alfonsina Storni, Juana de Ibarbourou, Idea Vilariño, Juan Gelman, Alejandra Pizarnik.
+- Narrativa de la selva y el río: Horacio Quiroga (uruguayo radicado en Misiones), Cuentos de amor de locura y de muerte (1917), Cuentos de la selva (1918), «El hombre muerto», «A la deriva». José Eustasio Rivera, La vorágine (1924).
+- El boom y alrededores: Jorge Luis Borges (Ficciones, 1944; El Aleph, 1949), Juan Rulfo (El llano en llamas, 1953; Pedro Páramo, 1955), Alejo Carpentier (El reino de este mundo, 1949, «lo real maravilloso»), Julio Cortázar (Bestiario, 1951; Rayuela, 1963), Carlos Fuentes (La muerte de Artemio Cruz, 1962), Mario Vargas Llosa (La ciudad y los perros, 1963), Gabriel García Márquez (Cien años de soledad, 1967; Crónica de una muerte anunciada, 1981; Nobel 1982), José María Arguedas (Los ríos profundos, 1958), Juan Carlos Onetti (El astillero, 1961), Clarice Lispector (La hora de la estrella, 1977).
+- Paraguay, vecino de Formosa: Augusto Roa Bastos, Hijo de hombre (1960) y Yo el Supremo (1974, sobre el dictador Francia); Premio Cervantes 1989. Josefina Plá. Rafael Barrett.
+- Testimonio y ensayo: Eduardo Galeano, Las venas abiertas de América Latina (1971), Memoria del fuego (1982–1986), El libro de los abrazos (1989). Rodolfo Walsh, Operación masacre (1957), «Carta abierta de un escritor a la Junta Militar» (1977).
+- Después del boom: Manuel Puig (El beso de la mujer araña, 1976), Roberto Bolaño (Los detectives salvajes, 1998; 2666, 2004), Pedro Lemebel, Fernanda Melchor, Mariana Enriquez, Samanta Schweblin, Selva Almada.
+
+====================================================================
+5. LITERATURA ARGENTINA
+====================================================================
+- Fundacionales: Esteban Echeverría, El matadero (escrito hacia 1838–1840, publicado 1871). Domingo F. Sarmiento, Facundo (1845), «civilización y barbarie». José Hernández, El gaucho Martín Fierro (1872) y La vuelta de Martín Fierro (1879). Lucio V. Mansilla, Una excursión a los indios ranqueles (1870).
+- Siglo XX: Roberto Arlt (El juguete rabioso, 1926; Los siete locos, 1929; Los lanzallamas, 1931; Aguafuertes porteñas), Macedonio Fernández, Leopoldo Marechal (Adán Buenosayres, 1948), Ezequiel Martínez Estrada (Radiografía de la pampa, 1933), Adolfo Bioy Casares (La invención de Morel, 1940), Silvina Ocampo, Ernesto Sabato (El túnel, 1948; Sobre héroes y tumbas, 1961), Antonio Di Benedetto (Zama, 1956), Haroldo Conti (Sudeste, 1962; Mascaró, el cazador americano, 1975; desaparecido en 1976), Juan José Saer (El entenado, 1983), Ricardo Piglia (Respiración artificial, 1980), Juan L. Ortiz (poeta del río, Entre Ríos), Olga Orozco, María Elena Walsh, Héctor G. Oesterheld (El Eternauta), Osvaldo Soriano (No habrá más penas ni olvido, 1978), Abelardo Castillo.
+- Contemporáneos: César Aira, Claudia Piñeiro, Mariana Enriquez (Nuestra parte de noche, 2019), Samanta Schweblin (Distancia de rescate, 2014), Selva Almada (El viento que arrasa, 2012; Chicas muertas, 2014; No es un río, 2020), Gabriela Cabezón Cámara (Las aventuras de la China Iron, 2017), Leila Guerriero, Pedro Mairal.
+
+====================================================================
+6. LITERATURA REGIONAL DEL NEA: FORMOSA, CORRIENTES, CHACO, MISIONES
+====================================================================
+ORLANDO VAN BREDAM (nombre que a veces se pronuncia o escribe mal como «Bambreda» o «Van Bredan»)
+- Nació en Villa San Marcial (Entre Ríos) el 23 de agosto de 1952. Vive en El Colorado, Formosa, desde 1975, donde enseñó durante décadas; dirigió el instituto superior local (1990–2003) y fue profesor de Teoría literaria y Literatura iberoamericana en la Universidad Nacional de Formosa. Ciudadano Ilustre de El Colorado (2012). Formado en Concepción del Uruguay; magíster en enseñanza de la lengua y la literatura (UNR).
+- Poesía: La hoguera inefable (1981), Los cielos diferentes (Premio Fray Mocho), Asombros y condenas (Premio Fernández de Peirotén, 1986), De mi legajo (Premio Nacional José Pedroni, 1999), Clausurado por nostalgia, Poesía reunida.
+- Cuentos y microficción (es un maestro de la ficción breve): Fabulaciones (1989), Simulacros (1991), La vida te cambia los planes (1994), Las armas que carga el diablo (1996), Nunca mires debajo de mi cama (antología de casi cien textos breves), La mujer sin ombligo y otros textos (2015, vida de pueblo chico y personajes al límite), Desorden del día, Crímenes de aldea.
+- Novelas: Colgado de los tobillos (novela breve), Teoría del desamparo (Premio Emecé 2007; comedia negra con enigmas), La música en que flotamos (finalista del Premio Clarín-Alfaguara 2007), Rincón Bomba (novela; el título remite al paraje formoseño donde ocurrió la masacre del pueblo pilagá de 1947) [verificar argumento], Mientras el mundo se achica (2014), Nada bueno bajo el sol (un hombre viaja con el cuerpo de su padre en un viejo Kaiser Carabela porque en su pueblo natal, Raíces, nadie quiere enterrarlo), Nadie detiene las ambulancias (2017), La secreta delicia de estar juntos (2020), El vidente de los días de lluvia (2022). También El retobado (sobre el Gauchito Gil) y el ensayo Poesía y ecología en la escuela secundaria (2019).
+- Rasgos: humor, ironía, absurdo cotidiano, el pueblo como microcosmos, la palabra justa de la microficción. Dijo en entrevistas que no cree en dogmas ni preceptivas. [verificar fechas: las fuentes no coinciden en algunos años]
+OTROS DE FORMOSA: Armando de Vita y Lacerra (1919–1987, poeta), Braulio Sandoval, Humberto Hauff (Como si todo fuera poco), Miriam Alvarez (poesía, Lo que nadie toca), Sandro Rojas Filártiga (Memorias de un combate). Literatura qom y pilagá: tradición oral, relatos del monte y del río recogidos en ediciones bilingües. [Si el usuario nombra a otro autor formoseño que no está acá, Anaquel pide que le cuente.]
+CORRIENTES:
+- Velmiro Ayala Gauna (Corrientes, 1905 – Rosario, 1967): Cuentos correntinos (1952), Otros cuentos correntinos (1953), Cuentos y cartas de correntinos (1955), Los casos de don Frutos Gómez (1955) y Don Frutos Gómez, comisario (1960): el comisario rural correntino de Capibara-Cué, detective criollo que resuelve con sentido común. Paranaseros (1957), La selva y su hombre (1944). Su obra inspiró las películas Alto Paraná (1958) y Don Frutos Gómez (1961).
+- Tradición poética y chamamecera: el chamamé es Patrimonio Cultural Inmaterial de la Humanidad (UNESCO, 2020). Letristas y poetas como Osvaldo Sosa Cordero, Julián Zini (sacerdote y poeta), Tránsito Cocomarola y Ernesto Montiel en la música. El guaraní correntino y el yopará atraviesan esta literatura.
+- Si aparece otro autor correntino (antiguo o actual), Anaquel comparte lo que sabe con prudencia y pide datos al usuario.
+CHACO y MISIONES: Mempo Giardinelli (Resistencia; Santo oficio de la memoria, 1991, Premio Rómulo Gallegos 1993; impulsor de la lectura con su Fundación), Alfredo Veiravé (poeta, vivió en Resistencia), Juan Ramón Lestani, Horacio Quiroga (Misiones), Olga Zamboni.
+
+====================================================================
+7. LOS LIBROS Y PROYECTOS DE ARIEL CÓCERES (El Colorado, Formosa)
+====================================================================
+Ariel Cóceres es escritor, docente (Ética e IA, Creaciones con IA, Prácticas Profesionalizantes y Gramática en el ISFD y T «República Federal de Alemania» de El Colorado), músico punk acústico, productor de radio y creador de DIA, Didáctica con IA («Aprendé jugando»). Publica con la editorial autogestionada y copyleft Adustiones Libertarias (El Colorado, Formosa): se permite y se alienta copiar y compartir sus obras citando la fuente. Su obra ha sido difundida en el programa Alegría Literaria de Radio Alegría Libertaria, que le dedicó emisiones como «Ariel Cóceres, anarco-literatura autogestionada» (2006–2011 y 2012–2021).
+Obras y series conocidas:
+- El Unabomber Formoseño (Primera parte, 2022; Segunda parte, 2024; Adustiones Libertarias): policial didáctico de sociolingüística y análisis del discurso ambientado en Formosa. Un Unabomber ficticio recorre la geografía formoseña y deja huellas en mensajes de WhatsApp y chats de Facebook; el lector lo descubre usando herramientas de comprensión lectora y lingüística forense (dialectos, sociolectos, tecnolectos, cronolectos, modalidades del enunciado y de la enunciación). Se usa en escuelas para fomentar la lectura y el análisis de textos. Tiene versión en juego 3D en primera persona.
+- Sombras Sintéticas: novela policial en seis capítulos, con cinco personajes recurrentes, sobre alfabetización en inteligencia artificial, ambientada en la geografía de Formosa.
+- El Código del Bermejo: relato cyberpunk ambientado en el Chaco argentino (El Colorado, el Bermejo, el Pilcomayo, la Ruta 9), con personajes y conceptos de su universo propio (el Simbión, EscriDiente, la Harpía).
+- Serie Diálogos Imposibles: entrevistas simuladas con pensadores históricos, hechas con IA y declaradas como tales. La primera, «Pensar sin barandillas — Diálogos entre el río y la mente», con Hannah Arendt, sobre la verdad de los hechos y la posverdad.
+- Ética e Inteligencia Artificial: mini-libro de historietas y actividades basado en la Ley 25.326 de protección de datos personales y la Recomendación de la UNESCO sobre la ética de la IA (2021).
+- AnarcoEfemérides: serie y canal (YouTube, TikTok, Instagram) de efemérides de la historia anarquista, con estética de cartelismo de la guerra civil española y la divisa «Ni patrón, ni frontera, ni olvido».
+- Personajes y juegos de DIA: TatuBot (tatú que se transforma en robot, guardián de Formosa), Pomberito Gramatical, DIALEX, El Verbólogo, Mele (oso melero que enseña matemática) y la serie Los Guardianes del Bermejo.
+- Música: cantautor punk acústico; canciones propias de DIA y de AnarcoEfemérides.
+Si el usuario pregunta por un libro de Ariel que no figura acá, Anaquel lo dice con naturalidad («ese todavía no lo tengo en mi anaquel») y le pide que se lo cuente.
+
+====================================================================
+8. MÚSICA DE TODOS LOS GÉNEROS, CON ACENTO PUNK
+====================================================================
+PUNK
+- Antecedentes: The Stooges, MC5, The Velvet Underground, New York Dolls.
+- Nueva York: Ramones, primer álbum «Ramones» (1976), canciones cortas, rápidas y de tres acordes; Patti Smith, Horses (1975); Television; Blondie.
+- Londres: Sex Pistols, Never Mind the Bollocks (1977); The Clash, The Clash (1977) y London Calling (1979); The Damned; Buzzcocks; Siouxsie and the Banshees.
+- Anarcopunk y DIY: Crass (The Feeding of the 5000, 1978; colectivo anarquista y pacifista, sello propio), Conflict, Poison Girls. La ética «hacelo vos mismo»: fanzines, sellos independientes, casetes copiados a mano, recitales autogestionados.
+- Hardcore estadounidense: Black Flag, Dead Kennedys (Fresh Fruit for Rotting Vegetables, 1980), Minor Threat, Bad Brains.
+- Punk argentino: Los Violadores (pioneros, comienzos de los ochenta), Los Testículos, Alerta Roja, Comando Suicida, Todos Tus Muertos (punk con raíz anarquista y antirracista), Attaque 77, 2 Minutos (Valentín Alsina), Flema, Cadena Perpetua, Mal Momento, Expulsados, Fun People. [verificar años de discos antes de afirmarlos]
+- Punk acústico y folk punk: Violent Femmes, Billy Bragg (cantautor militante), Against Me! en sus comienzos. El folk punk une la guitarra criolla o acústica con la urgencia punk: una sola voz, una guitarra y la letra al frente.
+ROCK NACIONAL ARGENTINO: Los Gatos (La balsa, 1967), Almendra, Manal, Vox Dei, Sui Generis, Pescado Rabioso, Serú Girán, Spinetta, Charly García, Los Redondos (Patricio Rey y sus Redonditos de Ricota), Sumo, Virus, Soda Stereo, Los Fabulosos Cadillacs.
+FOLKLORE, CHAMAMÉ Y CANCIÓN LATINOAMERICANA: Atahualpa Yupanqui, Mercedes Sosa, Violeta Parra, Víctor Jara, Los Jaivas, Silvio Rodríguez, Chabuca Granda; chamamé: Tránsito Cocomarola, Ernesto Montiel, Isaco Abitbol, Mario Bofill, Raúl Barboza, Chango Spasiuk; polca paraguaya y guarania (José Asunción Flores).
+TANGO: Gardel, Troilo, Pugliese, Piazzolla (Adiós Nonino; Libertango), Goyeneche.
+JAZZ, BLUES Y OTROS: Louis Armstrong, Duke Ellington, Charlie Parker, Miles Davis (Kind of Blue, 1959), John Coltrane (A Love Supreme, 1965), Nina Simone, Billie Holiday («Strange Fruit»); blues del Delta; reggae (Bob Marley); hip hop; música académica (Bach, Beethoven, Stravinsky, Ginastera).
+CÓMO HABLAR DE UN DISCO: banda o artista, año y sello, contexto (dónde y por qué se grabó), canciones clave, qué cambió en la música, arte de tapa, una anécdota y por qué temas empezar.
+
+====================================================================
+9. VINILOS, CASETES Y CD: SABER DE COLECCIONISTA
+====================================================================
+- Discos de pasta de 78 rpm (goma laca), primera mitad del siglo XX.
+- LP de vinilo de 33⅓ rpm (Columbia, 1948) y simple de 45 rpm (RCA Victor, 1949). Formatos: 12 pulgadas (LP, maxi), 10 pulgadas, 7 pulgadas (simple, EP).
+- Datos de coleccionista: la matriz o «run-out» (inscripciones grabadas cerca de la etiqueta), primeras ediciones, reediciones, prensajes de distintos países (los prensajes argentinos tienen sellos y tapas propias), tapa doble o gatefold, sobre interno, insertos y letras, etiquetas. Catálogos como Discogs ayudan a identificar ediciones.
+- Cuidado: guardarlos de pie, lejos del sol y del calor; agarrarlos del borde; limpiar con cepillo de fibra de carbono antes de escuchar; fundas internas antiestáticas; púa en buen estado; tocadiscos nivelado.
+- Casete compacto: presentado por Philips en 1963. Tipos I (ferro), II (cromo) y IV (metal). El Walkman de Sony (1979) lo volvió portátil. Fue el formato del intercambio, la copia casera, los enganchados y el punk autogestionado: grabar de la radio, armar compilados, editar demos. Cuidado: rebobinar con una birome si se enreda, guardarlo lejos de imanes y del calor.
+- CD (disco compacto): Philips y Sony, lanzado comercialmente en 1982. Audio digital 16 bits y 44,1 kHz, unos 74 a 80 minutos. Cajas «jewel case» y digipak.
+- Arte de tapa: diseñadores como Peter Saville (Joy Division, Unknown Pleasures, 1979, con el gráfico de ondas de un púlsar), Hipgnosis (Pink Floyd, The Dark Side of the Moon, 1973), Jamie Reid (collages de recortes de los Sex Pistols), Gee Vaucher (Crass, collages políticos en blanco y negro). En Argentina, el arte de tapa del rock nacional y las tapas de Ricardo Cohen («Rocambole») para Los Redondos.
+
+====================================================================
+10. LIBROS COMO OBJETOS: EDICIÓN, ENCUADERNACIÓN Y COPYLEFT
+====================================================================
+- Partes del libro: tapa, contratapa, lomo, solapas, guardas, portadilla, portada, página legal (créditos, ISBN, licencia), colofón (datos de impresión al final).
+- Encuadernaciones: rústica (pegada), cosida, abrochada a caballete (folletos), cartoné, artesanal con hilo. Folletos-libro A5 que se imprimen en A4 doblado.
+- Edición independiente y cartonera: Eloísa Cartonera (Buenos Aires, 2003), libros con tapas de cartón recuperado pintadas a mano. Fanzines y ediciones autogestionadas.
+- Copyleft: permiso para copiar, modificar y distribuir con la condición de que las copias sigan siendo libres. Licencia más cercana: Creative Commons Atribución-CompartirIgual (CC BY-SA 4.0). La ética de Adustiones Libertarias: «el conocimiento, como la tierra, no se vende: se comparte».
+
+====================================================================
+11. ESTRATEGIAS PARA CONVERSAR Y ENSEÑAR
+====================================================================
+- Puerta de entrada: recomendar por dónde empezar (un cuento, un capítulo, un tema, un lado del disco).
+- Conexiones: unir la obra enfocada con otra (por ejemplo, El nombre de la rosa con Borges; Crass con la edición copyleft; Van Bredam con Quiroga y la microficción; el casete con el fanzine).
+- Preguntas que abren: ¿qué te llamó de esta tapa?, ¿quién te lo prestó?, ¿qué otro libro o disco pondrías al lado en tu estante?
+- Ejemplos del lugar: el Bermejo, El Colorado, el monte, la Ruta 81, el chamamé en la radio, los recitales en el club del barrio.
+- Honestidad: distinguir lo documentado de lo dudoso, decir «no lo sé» y pedir que le cuenten.
+
+
+BASE DE CONOCIMIENTO DE EL VERBÓLOGO: PALABRAS, NEOLOGISMOS E INTELIGENCIA ARTIFICIAL
+Complementa la base de libros y discos. Marcas: [verificar] = dato dudoso; decirlo y no inventar.
+
+1. QUIÉN ES EL VERBÓLOGO
+El Verbólogo es un personaje de DIA (Didáctica con IA, El Colorado, Formosa), creado por Ariel Cóceres: un sabio de las palabras con pelo y barba verdes, anteojos redondos (un cristal rosa y otro celeste: uno mira la tradición y el otro el futuro), chaleco con letras y brazos con circuitos luminosos, mitad lingüista y mitad máquina. Ama los verbos (de ahí su nombre), las palabras nuevas, los libros y los discos. En DIA existe también el proyecto de tutoría El Verbólogo, con misiones de gramática con ejemplos de Formosa, y su ayudante Verboide.
+
+2. LOS VERBOS (su especialidad)
+- El verbo expresa acciones, procesos y estados; es el núcleo del predicado. Accidentes: persona, número, tiempo, modo (indicativo, subjuntivo, imperativo) y aspecto.
+- Voseo rioplatense: vos cantás, vos tenés, vos venís; imperativo cantá, tené, vení; en subjuntivo se usan las formas generales (que vos cantes; la forma «cantés» es más enfática).
+- Verboides: infinitivo (cantar), gerundio (cantando) y participio (cantado). No se conjugan en persona; en la tradición escolar argentina forman construcciones verboidales (construcción de infinitivo, de gerundio y de participio) y pueden cumplir funciones sustantivas, adverbiales o adjetivas.
+- Perífrasis verbales: ir a + infinitivo, tener que + infinitivo, estar + gerundio, etc.
+- Verbos irregulares: cambian la raíz o la desinencia (tener → tengo, tuve; ir → voy, fui).
+- Verbos nuevos que nacen de la tecnología: googlear, chatear, tuitear, wasapear (la Fundéu lo acepta escrito así), postear, stalkear, hackear, viralizar, escanear, formatear, resetear, loguearse, y los más recientes vinculados a la IA, como «promptear» (uso informal; en un registro cuidado se prefiere «dar instrucciones» o «escribir una instrucción»). Se conjugan como los de la primera conjugación: yo googleo, vos googleás.
+
+3. CÓMO NACEN LAS PALABRAS (formación de neologismos)
+- Neologismo: palabra, acepción o giro nuevo en una lengua. Puede ser de forma (palabra nueva) o de sentido (una palabra vieja con significado nuevo, como «nube», «ratón», «red», «virus», «alucinar» o «entrenar» en informática).
+- Derivación: prefijos y sufijos (viral → viralizar; tuit → tuitear; ciber- en ciberacoso, ciberseguridad).
+- Composición: dos palabras o bases (portapapeles, sacacorchos, teletrabajo).
+- Acronimia: se funden partes de palabras (ofimática, de oficina + informática; emoticono, de emoción + icono; informática, del francés informatique).
+- Siglas que se vuelven palabras: ovni, sida, pyme, IA. Las siglas no llevan plural con s escrita (las ONG).
+- Acortamiento: bici, cole, profe, compu, celu.
+- Préstamos y calcos: préstamo crudo (software, streaming, prompt), adaptado (escáner, cederrón, wifi, tuit) o calco (ratón por mouse, rascacielos por skyscraper, correo basura por spam).
+- Epónimos: palabras que vienen de nombres propios (sándwich, boicot, algoritmo, que viene del matemático persa al-Juarismi, siglo IX).
+- Onomatopeyas y creaciones expresivas.
+- Cuándo entra una palabra al diccionario: la Real Academia Española y la ASALE incorporan voces al Diccionario de la lengua española (DLE) cuando su uso es extendido y sostenido; la edición en línea se actualiza periódicamente. La Fundéu RAE (Fundación del Español Urgente) da recomendaciones rápidas sobre palabras nuevas. En Argentina, la Academia Argentina de Letras estudia los argentinismos.
+- Palabras del año: la Fundéu eligió «inteligencia artificial» como palabra del año 2022. En inglés, el Diccionario Cambridge eligió «hallucinate» en 2023 por su nuevo sentido en la IA y el Collins eligió «AI» en 2023; en 2025 el Collins eligió «vibe coding» [verificar].
+- Palabras que juegan: el Verbólogo disfruta de los neologismos literarios (el «glíglico» de Cortázar en Rayuela, las jitanjáforas, las palabras inventadas de Oliverio Girondo en En la masmédula).
+
+4. VOCABULARIO DE INTELIGENCIA ARTIFICIAL (con alternativas en español)
+- Inteligencia artificial (IA): disciplina que crea sistemas capaces de realizar tareas que asociamos a la inteligencia humana (reconocer imágenes, traducir, conversar, decidir). En español se escribe IA, no AI.
+- Algoritmo: secuencia ordenada de pasos para resolver un problema.
+- Aprendizaje automático (machine learning): los sistemas aprenden patrones a partir de datos en lugar de seguir reglas escritas a mano.
+- Aprendizaje profundo (deep learning): aprendizaje automático con redes neuronales de muchas capas.
+- Red neuronal artificial: modelo matemático inspirado de lejos en las neuronas; capas de nodos conectados con pesos que se ajustan durante el entrenamiento.
+- Entrenamiento: proceso en que el modelo ajusta sus parámetros con datos. Datos de entrenamiento, conjunto de prueba, ajuste fino (fine-tuning).
+- Parámetros o pesos: los números internos que el modelo ajusta al aprender.
+- Modelo de lenguaje y gran modelo de lenguaje (en inglés LLM): sistema entrenado con enormes cantidades de texto para predecir la siguiente unidad de texto; con eso redacta, resume, traduce y conversa.
+- Token (en español se puede decir «unidad» o «fragmento de texto»): pedazo de palabra con el que trabajan los modelos.
+- Instrucción, indicación o petición (en inglés prompt): lo que se le escribe a un sistema de IA. «Ingeniería de instrucciones» por prompt engineering.
+- IA generativa: sistemas que crean textos, imágenes, música, voces o video nuevos.
+- Asistente conversacional, bot conversacional o chatbot: programa que conversa por texto o voz. Agente: sistema de IA que además puede actuar (usar herramientas, buscar, ejecutar tareas). Agente de voz: como el propio Verbólogo, que habla con ElevenLabs.
+- Alucinación: cuando la IA inventa datos con apariencia de verdad. Es un neologismo de sentido.
+- Sesgo algorítmico: cuando un sistema reproduce o amplifica injusticias presentes en los datos (de género, de clase, de origen).
+- Ultrafalso (en inglés deepfake): video, audio o imagen falsificado con IA que imita a una persona real. La Fundéu propone «ultrafalso» [verificar].
+- Visión por computadora, reconocimiento de voz, síntesis de voz, clonación de voz, procesamiento del lenguaje natural (PLN).
+- Realidad aumentada (RA): se suman objetos virtuales a la imagen real de la cámara (como cuando el Verbólogo aparece sobre una tapa). Realidad virtual (RV) y realidad mixta.
+- Humano digital: personaje 3D que conversa con voz y gestos.
+- Base de conocimiento y recuperación aumentada (en inglés RAG): el agente busca en documentos propios antes de responder, para inventar menos.
+- Multimodal: que entiende o produce varios tipos de datos (texto, imagen, sonido).
+- Datos personales: en Argentina los protege la Ley 25.326. Marco ético: Recomendación de la UNESCO sobre la ética de la inteligencia artificial (2021).
+- Palabras de la cultura digital: viralizar, algoritmo de recomendación, burbuja de filtro, posverdad, desinformación, infoxicación, nomofobia, ciberacoso, huella digital, brecha digital, código abierto, copyleft, software libre.
+
+5. CÓMO EXPLICA EL VERBÓLOGO UNA PALABRA
+Origen (etimología si la conoce con seguridad), cómo se formó, qué significa hoy, un ejemplo con algo de Formosa o del aula, una alternativa en español si es un préstamo y una pregunta o juego final (por ejemplo: «¿a ver si conjugás promptear en voseo?»). Si no sabe el origen de una palabra, lo dice.

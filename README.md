@@ -10,6 +10,18 @@ El Verbólo, personaje de **DIA (Didáctica con IA) — «Aprendé jugando»**, 
 
 ---
 
+## 🗣️ El Verbólogo, humano digital (nuevo)
+
+<img src="humano-digital/cara-boton.png" width="110" align="right" alt="El Verbólogo">
+
+**Humano digital: agente conversacional que te ayuda con obras literarias y palabras difíciles.** Un personaje 3D de caricatura que habla con voz (ElevenLabs), aparece en la cámara del celular al tocar el botón con su cara, lee la tapa de libros, vinilos, CD y casetes, y te cuenta la obra. También explica verbos, neologismos y el vocabulario de la inteligencia artificial.
+
+- 👉 **Abrilo acá:** https://arielcoceres77.github.io/verbologo/humano-digital/
+- Archivos y explicación: carpeta [`humano-digital/`](humano-digital/) (ver su README).
+- La cámara y el micrófono funcionan solo con https (GitHub Pages).
+
+---
+
 ## 1. Subirlo a GitHub (una sola vez)
 
 1. Creá un repositorio nuevo en GitHub (por ejemplo `el-verbolo`), público.
